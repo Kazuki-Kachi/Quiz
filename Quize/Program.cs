@@ -19,10 +19,10 @@ namespace Quize
             SetValue(ic);
             SetValue(@is);
 
-            WriteLine($"{nameof(c)}:{c.ToString()}");
-            WriteLine($"{nameof(s)}:{s.ToString()}");
-            WriteLine($"{nameof(ic)}:{ic.ToString()}");
-            WriteLine($"{nameof(@is)}:{@is.ToString()}");
+            WriteLine($"class:{c.ToString()}");
+            WriteLine($"struct:{s.ToString()}");
+            WriteLine($"interface(class):{ic.ToString()}");
+            WriteLine($"interface(struct):{@is.ToString()}");
         }
 
         static void SetValue(IInterface target) => target.Value = 100;
