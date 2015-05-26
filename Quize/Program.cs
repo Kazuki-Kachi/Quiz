@@ -35,15 +35,23 @@ namespace Quize
             WriteLine("-------------------------------");
             WriteLine($"object(struct):{os.ToString()}");
         }
+        static void X()
+        {
+            var arr = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            arr.Add(10);
+        }
 
         static void SetValue(IInterface target) => target.Value = 100;
         static void SetValue(MyClass target) => target.Value = 100;
         static void SetValue(MyStruct target) => target.Value = 100;
-        static void SetValue(object target)
+        static void SetValue(dynamic target)
         {
-            var t = target as IInterface;
-            if (t == null) return;
-            t.Value = 100;
+            try
+            {
+                target.Value = 100;
+            }
+            catch (Exception)
+            { }
         }
     }
     interface IInterface
