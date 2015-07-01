@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
-namespace Quize
+namespace Quiz
 {
     class Program
     {
@@ -34,11 +34,6 @@ namespace Quize
             WriteLine($"object(class):{oc.ToString()}");
             WriteLine("-------------------------------");
             WriteLine($"object(struct):{os.ToString()}");
-        }
-        static void X()
-        {
-            var arr = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            arr.Add(10);
         }
 
         static void SetValue(IInterface target) => target.Value = 100;
